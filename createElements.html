@@ -15,6 +15,13 @@
             font-family: sans-serif;
             text-decoration: underline;
         }
+
+        p {
+            color: #14fff7;
+            font-size: 36px;
+            font-family: sans-serif;
+            font-weight: bold;
+        }
     </style>
 </head>
 
@@ -22,10 +29,16 @@
     <h1>Am I real?</h1>
     <script>
         let newElement = document.createElement('p')
+        newElement.textContent = "Or am I a figment of your imagination? "
         // step 1 - let's grab the parent
         let bodyElement = document.querySelector('body')
-        // step 2 - attache p tag to the body
-        bodyElement.appendChild(newElement)
+        // step 2 - attache p tag to the body, by using appendChild
+        // bodyElement.appendChild(newElement)
+        // this time, lets use insertBerfore()
+        // 1. find the sibling we want to precede
+        let scriptElement = document.querySelector('script')
+        // 2 use the insertBefore method (2 arguments)
+        bodyElement.insertBefore(newElement, scriptElement)
     </script>
 </body>
 
