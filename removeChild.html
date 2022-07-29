@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Creating Elements</title>
+    <style>
+        body {
+            background-color: blue;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #14fff7;
+            font-size: 72px;
+            font-family: sans-serif;
+            text-decoration: underline;
+        }
+
+        p {
+            color: #14fff7;
+            font-size: 36px;
+            font-family: sans-serif;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Am I real?</h1>
+    <script>
+        let newElement = document.createElement('p')
+        newElement.textContent = "Or am I a figment of your imagination?"
+        // add this paragraph to the DOM
+        let bodyElement = document.querySelector('body')
+        bodyElement.appendChild(newElement)
+        // remove this paragraph from the DOM
+        // bodyElement.removeChild(newElement)
+
+        // no access to the elemnts parent?
+        // newElement.parentNode.removeChild(newElement)
+
+        // using just remove()
+        newElement.remove()
+
+    </script>
+</body>
+
+</html>
