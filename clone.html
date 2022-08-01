@@ -27,21 +27,22 @@
 
 <body>
     <h1>Am I real?</h1>
+    <p class="message">Am I a figmant of your imagination?</p>
 
     <script>
-        let newElement = document.createElement('p')
-        newElement.textContent = "Or am I a figment of your imagination?"
-        // add this paragraph to the DOM
+        // 1. let's grab our body element, as well as the item we want to clone, which is the <p> element
         let bodyElement = document.querySelector('body')
-        bodyElement.appendChild(newElement)
-        // remove this paragraph from the DOM
-        // bodyElement.removeChild(newElement)
+        let paraElement = document.querySelector('.message')
 
-        // no access to the elemnts parent?
-        // newElement.parentNode.removeChild(newElement)
+        // 2. let's define out sayWhat function
+        function sayWhat() {
+            let clonedText = paraElement.cloneNode(true)
+            bodyElement.appendChild(clonedText)
+        }
 
-        // using just remove()
-        newElement.remove()
+        // let's use a built in DOM function (from the Window object) to exeute our sayWhat function every 1 second
+
+        // setInterval(sayWhat, 1000)
 
     </script>
 </body>
