@@ -4,10 +4,21 @@
     <button>Click me</button>
 </body>
 <script>
+    // ********* Inline Properties *********
     // step 1: grab your element
-    let btn = document.querySelector('button')
+    // let btn = document.querySelector('button')
     // step 2: add the event & code to execute
-    btn.onclick = () => { alert('BOOM') }
+    // btn.onclick = () => { alert('BOOM') }
+
+    // ********* Event Listeners *********
+    //  step 1: grab your element
+    let btn = document.querySelector('button')
+    // step 2: add the eventListener to our button
+    btn.addEventListener('click', boom)
+    //  step 3: let's define out boom function
+    function boom() {
+        alert('BOOM')
+    }
 </script>
 
 </html>
